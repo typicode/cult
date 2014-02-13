@@ -1,0 +1,24 @@
+{
+  "name": "cult",
+  "version": "1.0.0",
+  "description": "Use CoffeeScript by default for gulpfile - cult is a small wrapper for gulp",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "npm i gulp gulp-util coffee-script && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/typicode/cult.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpfile",
+    "gulpfile.coffee",
+    "coffee",
+    "coffee-script",
+    "coffeescript"
+  ],
+  "author": "Typicode <typicode@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
