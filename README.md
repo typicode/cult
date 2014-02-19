@@ -1,46 +1,35 @@
 # cult [![NPM version](https://badge.fury.io/js/cult.png)](http://badge.fury.io/js/cult)
 
-Useful if you're using CoffeeScript for `gulpfile` instead of JavaScript.
+cult is a no-brainer tool that detects `gulpfile` extension and calls your local `gulp` with the corresponding `--require` option.
 
-cult is just a 5 lines wrapper that automatically adds `--require coffee-script/register` to your local `gulp` cli.
+It supports `gulpfile.js`, `gulpfile.coffee` and `gulpfile.ls`.
 
 ## Usage
 
 Use cult as you would use gulp.
 
+## Example
+
 ```bash
+# gulpfile.coffee
 $ cult <task> <othertask>
 ```
 
-It's the same as:
+Will call:
 
 ```bash
-$ gulp <task> <othertask> --require coffee-script/register 
+$ gulp <task> <othertask> --require coffee-script/register
 ```
 
 ## Install
 
-Install gulp globally (if it's not already).
-
 ```bash
-$ npm install -g gulp
+$ npm install -g gulp cult
 ```
 
-Install cult globally.
+## Contribute
 
-```bash
-$ npm install -g cult
-```
-
-Install coffee-script in your project devDependencies.
-
-```bash
-$ npm install --save-dev coffee-script
-```
-
-## See also
-
-[Using CoffeeScript for gulpfile](https://github.com/gulpjs/gulp/blob/master/docs/recipes/using-coffee-script-for-gulpfile.md)
+Missing a language? Fork and create a pull request.
 
 ## License
 
