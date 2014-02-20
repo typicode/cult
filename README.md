@@ -17,6 +17,8 @@ Will call:
 $ gulp <task> <othertask> --require coffee-script/register
 ```
 
+cult supports `gulpfile` written in JavaScript, CoffeeScript and LiveScript.
+
 ## Install
 
 ```bash
