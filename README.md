@@ -31,6 +31,10 @@ $ npm install -g gulp cult
 
 Missing a language? Fork and create a pull request.
 
+## See also
+
+[Using CoffeeScript for gulpfile](https://github.com/gulpjs/gulp/blob/master/docs/recipes/using-coffee-script-for-gulpfile.md)
+
 ## License
 
 MIT
