@@ -23,10 +23,6 @@ $ gulp <task> <othertask> --require coffee-script/register
 $ npm install -g gulp cult
 ```
 
-## Support
-
-cult supports gulpfile.js, gulpfile.coffee and gulpfile.ls.
-
 ## Contribute
 
 Missing a language? Fork and create a pull request.
