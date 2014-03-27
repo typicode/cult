@@ -2,22 +2,21 @@
 
 cult is a no-brainer tool that detects `gulpfile` extension and calls your local `gulp` with the corresponding `--require` option.
 
-## Example
+## Usage
 
 Just use cult as you use gulp.
 
 ```bash
-# gulpfile.coffee
 $ cult <task> <othertask>
 ```
 
-Will call:
+Supports `gulpfile` written in JavaScript, CoffeeScript and LiveScript.
 
-```bash
-$ gulp <task> <othertask> --require coffee-script/register
-```
-
-cult supports `gulpfile` written in JavaScript, CoffeeScript and LiveScript.
+| command       | file            | will call
+|:--------------|:----------------|:--------------------------------------------
+| cult \<task\> | gulpfile.js     | gulp \<task\>
+| cult \<task\> | gulpfile.coffee | gulp \<task\> --require coffee-script/register
+| cult \<task\> | gulpfile.ls     | gulp \<task\> --require LiveScript
 
 ## Install
 
