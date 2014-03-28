@@ -23,6 +23,11 @@
     "coffeescript",
     "livescript"
   ],
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "LiveScript": "^1.2.0",
+    "gulp": "^3.5.2"
+  },
   "author": "Typicode <typicode@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md"
