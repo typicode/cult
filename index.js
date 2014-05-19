@@ -24,4 +24,21 @@ if (!fs.existsSync('gulpfile.js')) {
 }
 
 // Then call gulp
-spawn('gulp', process.argv, {stdio: "inherit"});
+
+var callSpawn = function(useCmd){
+  return spawn('gulp' + (useCmd ? '.cmd' : ''), process.argv, {
+    stdio: 'inherit'
+  });
+};
+
+callSpawn(false).on('error', function(error){
+  var platform = require('os').platform();
+
+  // if gulp isn't found on Windows, try gulp.cmd
+  if(error.code === 'ENOENT' && (platform === 'win32' || platform === 'win64')){
+    callSpawn(true);
+  }
+  else {
+    throw error;
+  }
+});
