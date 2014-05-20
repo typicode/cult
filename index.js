@@ -3,7 +3,12 @@ var fs = require('fs');
 var spawn = require('child_process').spawn;
 
 // Detecting coffee-script-redux before coffee-script
-var coffeescript = (require.resolve('coffee-script-redux')) ? 'coffee-script-redux' : 'coffee-script';
+try {
+  require.resolve('coffee-script-redux');
+  var coffeescript = 'coffee-script-redux';
+} catch(e) {
+  var coffeescript = 'coffee-script';
+}
 
 var options = {
   'coffee': coffeescript + '/register',
