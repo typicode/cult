@@ -1,8 +1,8 @@
 # cult [![NPM version](https://badge.fury.io/js/cult.svg)](http://badge.fury.io/js/cult)
 
-![cult](http://i.imgur.com/aHMew7e.png)
-
 > cult is to gulp what nodemon is to node.
+
+![cult](http://i.imgur.com/aHMew7e.png)
 
 # Features
 
