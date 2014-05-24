@@ -7,18 +7,18 @@
 # Features
 
 * Detects gulpfile extension and calls gulp accordingly. 
-* Watch and reload gulp when gulpfile changes.
+* Watches gulpfile and reloads gulp on change.
 * Supports gulpfile written in JavaScript, CoffeeScript, CoffeeScriptRedux and LiveScript.
 
 # Usage
 
-Install everything the same way you would do with gulp.
+Install everything as you would do with gulp.
 ```bash
 $ npm install -g gulp cult 
 $ npm install --save-dev coffee-script gulp
 ```
 
-Create your gulpfile in your favourite language.
+Create your gulpfile in your favourite language and call cult.
 ```bash
 $ vim gulpfile.coffee
 $ cult -w <task> <othertask>
