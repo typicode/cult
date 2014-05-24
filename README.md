@@ -1,6 +1,6 @@
 # cult [![NPM version](https://badge.fury.io/js/cult.svg)](http://badge.fury.io/js/cult)
 
-> cult is to gulp what nodemon is to node.
+> cult detects gulpfile extension and monitors changes
 
 ![cult](http://i.imgur.com/aHMew7e.png)
 
