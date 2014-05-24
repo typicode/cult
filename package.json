@@ -25,5 +25,8 @@
   ],
   "author": "Typicode <typicode@gmail.com>",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "chalk": "^0.4.0"
+  }
 }
