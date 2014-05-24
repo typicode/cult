@@ -1,10 +1,16 @@
 #!/usr/bin/env node
-var fs         = require('fs')
-var platform   = require('os').platform()
-var spawn      = require('child_process').spawn
-var chalk      = require('chalk')
-var FILES = {}
+var fs             = require('fs')
+var platform       = require('os').platform()
+var spawn          = require('child_process').spawn
+var updateNotifier = require('update-notifier')
+var chalk          = require('chalk')
+var FILES          = {}
 
+// Notifier
+var notifier = updateNotifier();
+if (notifier.update) notifier.notify()
+
+// Supported files
 FILES['gulpfile.js'] = undefined
 
 try {
