@@ -6,8 +6,8 @@
 
 # Features
 
-* Detects gulpfile extension and calls gulp accordingly 
-* Watch and reload gulp when gulpfile changes
+* Detects gulpfile extension and calls gulp accordingly. 
+* Watch and reload gulp when gulpfile changes.
 * Supports gulpfile written in JavaScript, CoffeeScript, CoffeeScriptRedux and LiveScript.
 
 # Usage
@@ -22,11 +22,10 @@ Create your gulpfile in your favourite language.
 ```bash
 $ vim gulpfile.coffee
 $ cult -w <task> <othertask>
+$ # will call gulp <task> <othertask> --require coffee-script/register
 ```
 
-It will call `gulp --require coffee-script/register` and reload it whenever gulpfile.coffee changes.
-
-If you don't want cult to watch your gruntfile, just remove the `-w` parameter.
+Just remove the `-w` parameter if you don't your gulpfile to be watched.
 
 # Contribute
 

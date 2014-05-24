@@ -1,7 +1,7 @@
 {
   "name": "cult",
   "version": "1.4.0",
-  "description": "Detects gulpfile extension and starts gulp accordingly. Works with JavaScript (gulpfile.js), CoffeeScript (gulpfile.coffee) and LiveScript (gulpfile.ls).",
+  "description": "Monitor changes in your gulpfile and detects its extension. Works with JavaScript gulpfile.js - CoffeeScript gulpfile.coffee - LiveScript gulpfile.ls",
   "bin": "./index.js",
   "scripts": {
     "test": "npm i gulp gulp-util coffee-script && cd example && node ../index.js && cd .."
