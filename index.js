@@ -71,15 +71,20 @@ function run() {
       spawn('gulp.cmd', process.argv, { stdio: 'inherit' })
     }
   })
+  return child
 }
 
 if (watch) {
   log('Watching ' + gulpfileName)
+  run()
   fs.watchFile(gulpfileName, function() {
     console.log()
     log('Reloading')
     run()
   })
+} else {
+  var child = run()
+  child.on('exit', function(code) {
+    process.exit(code)
+  })
 }
-
-run()
