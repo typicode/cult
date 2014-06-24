@@ -31,10 +31,6 @@ Just remove the `-w` parameter if you don't your gulpfile to be watched.
 
 Missing a language? Fork and create a pull request.
 
-## See also
-
-[gulp docs - Using CoffeeScript for gulpfile](https://github.com/gulpjs/gulp/blob/master/docs/recipes/using-coffee-script-for-gulpfile.md)
-
 ## License
 
 MIT
