@@ -14,12 +14,18 @@ if (notifier.update) notifier.notify()
 FILES['gulpfile.js'] = undefined
 
 try {
-  require.resolve('coffee-script-redux')
-  FILES['gulpfile.coffee'] = 'coffee-script-redux/register'
+  require.resolve('iced-coffee-script')
+  FILES['gulpfile.coffee'] = 'iced-coffee-script/register'
 } catch(e) {
-  FILES['gulpfile.coffee'] = 'coffee-script/register'
-} 
+  try {
+    require.resolve('coffee-script-redux')
+    FILES['gulpfile.coffee'] = 'coffee-script-redux/register'
+  } catch(e) {
+    FILES['gulpfile.coffee'] = 'coffee-script/register'
+  }
+}
 
+FILES['gulpfile.iced'] = 'iced-coffee-script/register'
 FILES['gulpfile.ls'] = 'LiveScript'
 
 // Keep only gulp arguments
