@@ -8,7 +8,7 @@
 
 * Detects gulpfile extension and calls gulp accordingly. 
 * Watches gulpfile and reloads gulp on change.
-* Supports gulpfile written in JavaScript, CoffeeScript, CoffeeScriptRedux and LiveScript.
+* Supports gulpfile written in JavaScript, CoffeeScript, IcedCoffeeScript, CoffeeScriptRedux and LiveScript.
 
 # Usage
 
