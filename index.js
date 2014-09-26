@@ -69,8 +69,11 @@ function log(str) {
   console.log('[' + chalk.cyan('cult') + '] ' + str)
 }
 
+var child;
 function run() {
-  var child = spawn('gulp', process.argv, { stdio: 'inherit' })
+  if (child) child.kill();
+  
+  child = spawn('gulp', process.argv, { stdio: 'inherit' })
   child.on('error', function(error) {
     child.kill()
     if (error.code === 'ENOENT' && (platform === 'win32' || platform === 'win64')) {
