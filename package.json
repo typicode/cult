@@ -1,6 +1,6 @@
 {
   "name": "cult",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Monitor changes in your gulpfile and detects its extension. Works with JavaScript gulpfile.js - CoffeeScript gulpfile.coffee - LiveScript gulpfile.ls",
   "bin": "./index.js",
   "scripts": {
