@@ -4,9 +4,13 @@
 
 _Works on OS X, Linux and Windows._
 
+## Install
+
 ```bash
 $ npm install -g cult
 ```
+
+## Usage
 
 ```bash
 $ cult <task> <othertask> # will call gulp <task> <othertask>
@@ -15,7 +19,7 @@ $ cult <task> <othertask> # will call gulp <task> <othertask>
 If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add something similar to this to your `watch` task to reload on any gulpfile changes:
 
 ```javascript
-gulp.watch(['gulp/**'], function() { touch('gulpfile.coffee') }
+gulp.watch(['gulp/**'], function() { touch('gulpfile.coffee') })
 ```
 
 ## History
