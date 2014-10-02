@@ -12,9 +12,7 @@ $ npm install -g cult
 $ cult <task> <othertask> # will call gulp <task> <othertask>
 ```
 
-### For `gulpfile` split across multiple files
-
-If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add something similar to this to your `watch` task to reload on any gulp file changes:
+If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add something similar to this to your `watch` task to reload on any gulpfile changes:
 
 ```javascript
 gulp.watch(['gulp/**'], function() { touch('gulpfile.coffee') }
