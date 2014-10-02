@@ -4,75 +4,30 @@ var platform       = require('os').platform()
 var spawn          = require('child_process').spawn
 var updateNotifier = require('update-notifier')
 var chalk          = require('chalk')
-var FILES          = {}
 
 // Notifier
-var notifier = updateNotifier();
+var notifier = updateNotifier()
 if (notifier.update) notifier.notify()
 
-// Supported files
-FILES['gulpfile.js'] = undefined
-
-try {
-  require.resolve('iced-coffee-script')
-  FILES['gulpfile.coffee'] = 'iced-coffee-script/register'
-} catch(e) {
-  try {
-    require.resolve('coffee-script-redux')
-    FILES['gulpfile.coffee'] = 'coffee-script-redux/register'
-  } catch(e) {
-    FILES['gulpfile.coffee'] = 'coffee-script/register'
-  }
-}
-
-FILES['gulpfile.iced'] = 'iced-coffee-script/register'
-FILES['gulpfile.ls'] = 'LiveScript'
-
-// Keep only gulp arguments
+// Keep gulp arguments
 process.argv.splice(0, 2)
 
-// And remove cult specific arguments
-var watch = false
-var watchIndex = process.argv.indexOf('-w')
-if (watchIndex > -1) {
-  process.argv.splice(watchIndex, 1)
-  watch = true
-}
-
 // Find gulpfile
-var gulpfileName
-for (var file in FILES) {
-  if (fs.existsSync(file)) {
-    gulpfileName = file
-    break;
+function findGulpfile() {
+  var filenames = fs.readdirSync(process.cwd())
+  for (var i in filenames) {
+    if (filenames[i].indexOf('gulpfile.') !== -1) return filenames[i]
   }
 }
 
-// Add --require
-var requireOption = FILES[gulpfileName]
-if (requireOption) {
-  process.argv.push('--require')
-  process.argv.push(requireOption)
-}
-
-// Find gulpfile
-var gulpfileName
-for (var file in FILES) {
-  if (fs.existsSync(file)) {
-    gulpfileName = file
-    break;
-  }
-}
-
-// Let's go
 function log(str) {
   console.log('[' + chalk.cyan('cult') + '] ' + str)
 }
 
-var child;
+var child
 function run() {
-  if (child) child.kill();
-  
+  if (child) child.kill()
+
   child = spawn('gulp', process.argv, { stdio: 'inherit' })
   child.on('error', function(error) {
     child.kill()
@@ -83,17 +38,17 @@ function run() {
   return child
 }
 
-if (watch) {
-  log('Watching ' + gulpfileName)
-  run()
-  fs.watchFile(gulpfileName, function() {
-    console.log()
+var gulpfile = findGulpfile()
+
+if (gulpfile) {
+  log('Watching ' + gulpfile)
+
+  fs.watchFile(gulpfile, function() {
     log('Reloading')
     run()
   })
+
+  run()
 } else {
-  var child = run()
-  child.on('exit', function(code) {
-    process.exit(code)
-  })
+  return log('Can\'t find gulpfile')
 }
