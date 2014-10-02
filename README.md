@@ -27,6 +27,15 @@ $ # will call gulp <task> <othertask> --require coffee-script/register
 
 Just remove the `-w` parameter if you don't your gulpfile to be watched.
 
+### For `gulpfile` split across multiple files
+
+If your `gulpfile` is split across multiple files, add something similar 
+to this to your `watch` task to reload on any gulp file changes:
+
+```coffee
+gulp.watch(['gulp/**'], -> exec('touch gulpfile.coffee'))
+```
+
 # Contribute
 
 Missing a language? Fork and create a pull request.
