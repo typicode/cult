@@ -49,6 +49,15 @@ if (gulpfile) {
   })
 
   run()
+
+  process.on('SIGINT', function() {
+    // Prevent killing the main process before child
+    if (!child) process.exit()
+
+    child.on('exit', function() {
+      process.exit()
+    })
+  })
 } else {
   return log('Can\'t find gulpfile')
 }
