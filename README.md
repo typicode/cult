@@ -2,8 +2,6 @@
 
 > cult monitors gulpfile changes and reloads gulp
 
-_Works on OS X, Linux and Windows._
-
 ## Install
 
 ```bash
