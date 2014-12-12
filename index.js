@@ -26,16 +26,29 @@ function log(str) {
 
 var child
 function run() {
-  if (child) child.kill()
-
+  log('Running gulp...')
   child = spawn('gulp', process.argv, { stdio: 'inherit' })
   child.on('error', function(error) {
-    child.kill()
+    child.kill('SIGKILL')
     if (error.code === 'ENOENT' && (platform === 'win32' || platform === 'win64')) {
       spawn('gulp.cmd', process.argv, { stdio: 'inherit' })
     }
   })
+  child.on('exit', function() {
+    // Exiting when gulp finishes all tasks
+    process.exit()
+  })
   return child
+}
+
+function stop(cb) {
+  if (!child) return cb()
+
+  child.removeAllListeners('exit')  // Prevent exiting on reload
+  child.on('exit', cb)
+
+  log('Killing gulp...')
+  child.kill('SIGINT')
 }
 
 var gulpfile = findGulpfile()
@@ -44,8 +57,10 @@ if (gulpfile) {
   log('Watching ' + gulpfile)
 
   fs.watchFile(gulpfile, function() {
-    log('Reloading')
-    run()
+    log('Gulpfile changed. Reloading...')
+    stop(function() {
+      run()
+    })
   })
 
   run()
@@ -53,10 +68,6 @@ if (gulpfile) {
   process.on('SIGINT', function() {
     // Prevent killing the main process before child
     if (!child) process.exit()
-
-    child.on('exit', function() {
-      process.exit()
-    })
   })
 } else {
   return log('Can\'t find gulpfile')
