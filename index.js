@@ -46,10 +46,24 @@ monitor.maxRestarts = 0
 
 // If on windows and gulp fails, try to replace it with gulp.cmd
 monitor.on('warn', function(err) {
-  if (err.code === 'ENOENT' && (os.platform === 'win32' || os.platform === 'win64')) {
-    monitor = respawn(['gulp.cmd'].concat(process.argv), options)
-    monitor.maxRestarts = 0
-    monitor.start()
+  if (err.code === 'ENOENT') {
+    if (os.platform === 'win32' || os.platform === 'win64') {
+      monitor = respawn(['gulp.cmd'].concat(process.argv), options)
+      monitor.maxRestarts = 0
+      monitor.on('warn', function(err) {
+        if (err.code === 'ENOENT') {
+          log(
+            'Error, can\'t find ' + chalk.magenta('gulp') + ' or '
+            + chalk.magenta('gulp.cmd') + ' command'
+          )
+          process.exit(1)
+        }
+      })
+      monitor.start()
+    } else {
+      log('Error, can\'t find ' + chalk.magenta('gulp') + ' command')
+      process.exit(1)
+    }
   }
 })
 
