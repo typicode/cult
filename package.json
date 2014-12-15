@@ -1,6 +1,6 @@
 {
   "name": "cult",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "monitors gulpfile changes and reloads gulp",
   "bin": "./index.js",
   "scripts": {
