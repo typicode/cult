@@ -4,7 +4,7 @@
   "description": "monitors gulpfile changes and reloads gulp",
   "bin": "./index.js",
   "scripts": {
-    "test": "npm i gulp gulp-util coffee-script && cd example && node ../index.js && cd .."
+    "test": "cd example && node ../index.js && cd .."
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,12 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "chalk": "^0.4.0",
-    "update-notifier": "^0.1.8"
+    "respawn": "^1.0.0",
+    "update-notifier": "^0.2.2"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "express": "^4.10.6",
+    "gulp-express": "^0.1.2"
   }
 }
