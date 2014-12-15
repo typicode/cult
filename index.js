@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var os = require('os')
 var fs = require('fs')
 var respawn = require('respawn')
