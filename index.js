@@ -44,9 +44,10 @@ var monitor = respawn(['gulp'].concat(process.argv), options)
 monitor.maxRestarts = 0
 
 // If on windows and gulp fails, try to replace it with gulp.cmd
-monitor.on('exit', function(code, signal) {
-  if (code === 'ENOENT' && (os.platform === 'win32' || os.platform === 'win64')) {
+monitor.on('warn', function(err) {
+  if (err.code === 'ENOENT' && (os.platform === 'win32' || os.platform === 'win64')) {
     monitor = respawn(['gulp.cmd'].concat(process.argv), options)
+    monitor.maxRestarts = 0
     monitor.start()
   }
 })
