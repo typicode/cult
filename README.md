@@ -30,4 +30,4 @@ gulp.watch(['gulp/**'], function() { touch.sync('gulpfile.coffee') })
 
 ## License
 
-MIT
+MIT - [Typicode](https://github.com/typicode)
