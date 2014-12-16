@@ -1,4 +1,4 @@
-# cult [![NPM version](https://badge.fury.io/js/cult.svg)](http://badge.fury.io/js/cult)
+# cult [![](https://img.shields.io/npm/v/cult.svg?style=flat)](https://www.npmjs.com/package/cult)
 
 > cult monitors gulpfile changes and reloads gulp
 
