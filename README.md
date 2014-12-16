@@ -11,8 +11,11 @@ $ npm install -g cult
 ## Usage
 
 ```bash
-$ cult <task> <othertask> # will call gulp <task> <othertask>
+$ cult <task> <othertask>
+# will call gulp <task> <othertask>
 ```
+
+## Multiple files support
 
 If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add something similar to this to your `watch` task to reload on any `gulpfile` changes:
 
