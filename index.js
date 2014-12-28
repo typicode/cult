@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-var os = require('os')
 var fs = require('fs')
 var respawn = require('respawn')
 var chalk = require('chalk')
@@ -47,7 +46,7 @@ monitor.maxRestarts = 0
 // If on windows and gulp fails, try to replace it with gulp.cmd
 monitor.on('warn', function(err) {
   if (err.code === 'ENOENT') {
-    if (os.platform === 'win32' || os.platform === 'win64') {
+    if (process.platform === 'win32') {
       monitor = respawn(['gulp.cmd'].concat(process.argv), options)
       monitor.maxRestarts = 0
       monitor.on('warn', function(err) {
