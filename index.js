@@ -13,7 +13,7 @@ var pkg = require('./package.json')
 function findGulpfile() {
   var filenames = fs.readdirSync(process.cwd())
   for (var i in filenames) {
-    if (filenames[i].indexOf('gulpfile.') !== -1) return filenames[i]
+    if (filenames[i].toLowerCase().indexOf('gulpfile.') !== -1) return filenames[i]
   }
 }
 
