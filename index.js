@@ -43,7 +43,7 @@ var options = {
 var monitor = respawn(['gulp'].concat(process.argv), options)
 monitor.maxRestarts = 0
 
-// If on windows and gulp fails, try to replace it with gulp.cmd
+// If on Windows and gulp fails, try to replace it with gulp.cmd
 monitor.on('warn', function(err) {
   if (err.code === 'ENOENT') {
     if (process.platform === 'win32') {
@@ -53,14 +53,16 @@ monitor.on('warn', function(err) {
         if (err.code === 'ENOENT') {
           log(
             'Error, can\'t find ' + chalk.magenta('gulp') + ' or '
-            + chalk.magenta('gulp.cmd') + ' command'
+            + chalk.magenta('gulp.cmd') + ' command in $PATH, try running: '
+            + 'npm install -g gulp'
           )
           process.exit(1)
         }
       })
       monitor.start()
     } else {
-      log('Error, can\'t find ' + chalk.magenta('gulp') + ' command')
+      log('Error, can\'t find ' + chalk.magenta('gulp') + ' command in $PATH, '
+      + 'try running: npm install -g gulp')
       process.exit(1)
     }
   }
