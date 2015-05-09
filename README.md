@@ -12,9 +12,10 @@ cult <task> <othertask>
 
 This command will call `gulp <task> <othertask>` and reload it on gulpfile change.
 
-_If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add this code to your `watch` task to reload on any `gulpfile` changes._
+If your `gulpfile` is split across multiple files, use this code:
 
 ```javascript
+var touch = require('touch')
 gulp.watch(['gulp/**'], function() { touch.sync('gulpfile.coffee') })
 ```
 
