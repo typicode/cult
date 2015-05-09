@@ -1,6 +1,6 @@
 # cult [![](https://img.shields.io/npm/v/cult.svg?style=flat)](https://www.npmjs.com/package/cult)
 
-Like nodemon but for gulp
+> Like nodemon but for gulp
 
 ```bash
 # Please note that gulp need to be installed gloablly on your system for cult to work
@@ -17,7 +17,5 @@ If your `gulpfile` is split across multiple files, use [node-touch](https://gith
 ```javascript
 gulp.watch(['gulp/**'], function() { touch.sync('gulpfile.coffee') })
 ```
-
-## License
 
 MIT - [Typicode](https://github.com/typicode)
