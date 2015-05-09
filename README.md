@@ -1,9 +1,9 @@
 # cult [![](https://img.shields.io/npm/v/cult.svg?style=flat)](https://www.npmjs.com/package/cult)
 
-> cult monitors gulpfile changes and reloads gulp
+Like nodemon but for gulp
 
 ```bash
-# gulp need to be installed on your system for cult to work
+# Please note that gulp need to be installed gloablly on your system for cult to work
 npm install -g cult
 ```
 
