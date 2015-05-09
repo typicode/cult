@@ -15,8 +15,6 @@ $ cult <task> <othertask>
 # will call gulp <task> <othertask>
 ```
 
-__Multiple files support__
-
 If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add this code to your `watch` task to reload on any `gulpfile` changes:
 
 ```javascript
