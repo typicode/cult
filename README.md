@@ -15,18 +15,13 @@ $ cult <task> <othertask>
 # will call gulp <task> <othertask>
 ```
 
-## Multiple files support
+__Multiple files support__
 
-If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add something similar to this to your `watch` task to reload on any `gulpfile` changes:
+If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add this code to your `watch` task to reload on any `gulpfile` changes:
 
 ```javascript
 gulp.watch(['gulp/**'], function() { touch.sync('gulpfile.coffee') })
 ```
-
-## History
-
-* __2.x.x__ Since gulp 3.7, there's no need anymore to add `--require`, cult now will symply monitor gulpfile (until this feature is added to gulp :)
-* __1.x.x__ Monitors gulpfile changes and adds `--require` depending on gulpfile extension
 
 ## License
 
