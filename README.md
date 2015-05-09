@@ -2,19 +2,17 @@
 
 > Like nodemon but for gulp
 
-Install
-
 ```bash
 npm install -g gulp cult
 ```
-
-This command will call `gulp <task> <othertask>` and reload it on gulpfile change
 
 ```bash
 cult <task> <othertask>
 ```
 
-If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add this code to your `watch` task to reload on any `gulpfile` changes
+This command will call `gulp <task> <othertask>` and reload it on gulpfile change.
+
+_If your `gulpfile` is split across multiple files, use [node-touch](https://github.com/isaacs/node-touch) and add this code to your `watch` task to reload on any `gulpfile` changes._
 
 ```javascript
 gulp.watch(['gulp/**'], function() { touch.sync('gulpfile.coffee') })
