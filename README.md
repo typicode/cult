@@ -10,7 +10,7 @@ npm install -g gulp cult
 cult <task> <othertask>
 ```
 
-This command will call `gulp <task> <othertask>` and reload it on gulpfile change.
+This command will call `gulp <task> <othertask>` and reload it on `gulpfile` change.
 
 If your `gulpfile` is split across multiple files, use this code:
 
